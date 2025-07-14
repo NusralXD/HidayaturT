@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidayatur Travel – A Journey for Iman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="/galery/faviconV2.png">
+  <style>
+    :root {
+      --primary: #d4ff00;
+      --bg: #0c0f11;
+      --text: #f0f0f0;
+      --accent: #b2ff59;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: url('/galery/kabah.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+    .btn-primary {
+      margin-top: 2rem;
+      background: var(--primary);
+      color: black;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .features, .paket, .galeri-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature, .paket-item {
+      background: #1c1c1c;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .paket-item h3 {
+      color: var(--primary);
+    }
+    .paket-item a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .galeri-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    blockquote {
+      text-align: center;
+      font-style: italic;
+      margin-top: 2rem;
+      color: #ccc;
+    }
+    footer {
+      background: #0a0a0a;
+      padding: 2rem;
+      text-align: center;
+      color: var(--text);
+    }
+    footer nav a {
+      color: var(--accent);
+      margin: 0 0.75rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hidayatur Travel</h1>
+    <p>Create Your Spiritual Adventure. Discover With Us.</p>
+    <a href="#paket" class="btn-primary">Lihat Paket Umroh</a>
+  </header>
+
+  <section>
+    <h2>Why Choose Us</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Terdaftar Resmi</h3>
+        <p>Legalitas Kemenag RI menjamin perjalanan aman & syar’i.</p>
+      </div>
+      <div class="feature">
+        <h3>Paket Lengkap</h3>
+        <p>Umroh reguler, wisata ke Turki, Eropa & destinasi domestik.</p>
+      </div>
+      <div class="feature">
+        <h3>Pendamping Ahli</h3>
+        <p>Bimbingan manasik dan teknis oleh tim profesional.</p>
+      </div>
+      <div class="feature">
+        <h3>Harga Amanah</h3>
+        <p>Tanpa biaya tersembunyi. Transparansi adalah prioritas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="paket">
+    <h2>Paket Perjalanan</h2>
+    <div class="paket">
+      <div class="paket-item">
+        <h3>Umroh Reguler</h3>
+        <p>8–12 Hari | Hotel dekat Masjidil Haram & Nabawi</p>
+        <a href="https://hidayatur.co.id/paket-perjalanan/umroh" target="_blank">Lihat Detail</a>
+      </div>
+      <div class="paket-item">
+        <h3>Wisata Islami </h3>
+        <p>Spiritual & wisata sejarah di Istanbul dan Cappadocia.</p>
+        <a href="https://hidayatur.co.id/paket-perjalanan/umroh-plus-wisata" target="_blank">Lihat Detail</a>
+      </div>
+      <div class="paket-item">
+        <h3>Wisata Domestik</h3>
+        <p>Perjalanan halal ke Lombok, Dieng, Jogja, hingga Eropa Muslim.</p>
+        <a href="https://hidayatur.co.id/paket-perjalanan/wisata-domestik" target="_blank">Lihat Semua</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Testimoni Jamaah</h2>
+    
+    <blockquote>
+      "Layanan Hidayatur sangat profesional. Saya merasa aman dan terbimbing sejak awal hingga akhir perjalanan."
+      <br>– Ibu Nani, Bandung
+    </blockquote>
+    <div class="galeri-grid">
+      <img src="/galery/Hajj.jpg" alt="Masjidil Haram">
+      <img src="/galery/islami.jpg" alt="Cappadocia">
+      <img src="/galery/mekah.jpg" alt="Manasik">
+    </div>
+  </section>
+
+  <section>
+    <h2>Kontak & Konsultasi</h2>
+    <p style="text-align: center;">Siap Berangkat? Hubungi tim kami untuk info lengkap & pendaftaran.</p>
+    <ul style="list-style: none; text-align: center; padding: 0;">
+      <li><strong>WhatsApp:</strong> <a href="https://wa.me/6282120282823">+62 821‑2028‑2823</a></li>
+      <li><strong>Email:</strong> <a href="mailto:hidayatur.id@gmail.com">hidayatur.id@gmail.com</a></li>
+      <li><strong>Alamat:</strong> Jl. Pamanukan No.12, Antapani Kulon, Bandung</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hidayatur Travel. A Journey for Iman.</p>
+    <nav>
+      <a href="https://hidayatur.co.id/" target="_blank">Tentang Kami</a> |
+      <a href="https://hidayatur.co.id/blogs" target="_blank">Blog</a> |
+      <a href="https://hidayatur.co.id/contact-us" target="_blank">Kontak</a>
+    </nav>
+  </footer>
+</body>
+</html>
