@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hidayatur Travel – A Journey for Iman</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" href="/galery/faviconV2.png">
   <style>
     :root {
@@ -12,15 +13,21 @@
       --bg: #0c0f11;
       --text: #f0f0f0;
       --accent: #b2ff59;
+      --secondary: #1e2a44;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background-color: var(--bg);
       color: var(--text);
+      overflow-x: hidden;
     }
     header {
-      background: url('/galery/kabah.jpg') no-repeat center center/cover;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.pinimg.com/1200x/97/8f/fb/978ffb16be030a299ad164e390480d92.jpg') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -28,121 +35,175 @@
       justify-content: center;
       text-align: center;
       color: white;
+      position: relative;
     }
     header h1 {
-      font-size: 4rem;
-      font-weight: 800;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+      font-size: 5rem;
+      font-weight: 700;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+      animation: fadeInDown 1.5s ease-in-out;
     }
     header p {
-      font-size: 1.3rem;
-      margin-top: 1rem;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      animation: fadeInUp 1.5s ease-in-out;
     }
     .btn-primary {
       margin-top: 2rem;
       background: var(--primary);
       color: black;
-      padding: 1rem 2rem;
+      padding: 1rem 2.5rem;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       border-radius: 50px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(212, 255, 0, 0.5);
     }
     section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
+      padding: 5rem 2rem;
+      max-width: 1400px;
       margin: auto;
     }
     h2 {
       color: var(--accent);
-      font-size: 2rem;
+      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     .features, .paket, .galeri-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
     .feature, .paket-item {
-      background: #1c1c1c;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      background: var(--secondary);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .feature:hover, .paket-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
     }
     .paket-item h3 {
       color: var(--primary);
+      font-size: 1.8rem;
     }
     .paket-item a {
       color: var(--accent);
-      text-decoration: underline;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .paket-item a:hover {
+      color: var(--primary);
     }
     .galeri-grid img {
       width: 100%;
-      height: auto;
+      height: 200px;
+      object-fit: cover;
       border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .galeri-grid img:hover {
+      transform: scale(1.05);
     }
     blockquote {
       text-align: center;
       font-style: italic;
-      margin-top: 2rem;
+      font-size: 1.2rem;
+      margin: 2rem auto;
       color: #ccc;
+      max-width: 800px;
+      padding: 1rem;
+      border-left: 5px solid var(--accent);
+      background: var(--secondary);
+      border-radius: 10px;
     }
     footer {
       background: #0a0a0a;
-      padding: 2rem;
+      padding: 3rem 2rem;
       text-align: center;
       color: var(--text);
     }
     footer nav a {
       color: var(--accent);
-      margin: 0 0.75rem;
+      margin: 0 1rem;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    footer nav a:hover {
+      color: var(--primary);
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Hidayatur Travel</h1>
-    <p>Create Your Spiritual Adventure. Discover With Us.</p>
-    <a href="#paket" class="btn-primary">Lihat Paket Umroh</a>
+    <h1 data-aos="fade-down">Hidayatur Travel</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Create Your Spiritual Adventure. Discover With Us.</p>
+    <a href="#paket" class="btn-primary" data-aos="zoom-in" data-aos-delay="400">Lihat Paket Umroh</a>
   </header>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Why Choose Us</h2>
     <div class="features">
-      <div class="feature">
+      <div class="feature" data-aos="fade-up" data-aos-delay="100">
         <h3>Terdaftar Resmi</h3>
         <p>Legalitas Kemenag RI menjamin perjalanan aman & syar’i.</p>
       </div>
-      <div class="feature">
+      <div class="feature" data-aos="fade-up" data-aos-delay="200">
         <h3>Paket Lengkap</h3>
         <p>Umroh reguler, wisata ke Turki, Eropa & destinasi domestik.</p>
       </div>
-      <div class="feature">
+      <div class="feature" data-aos="fade-up" data-aos-delay="300">
         <h3>Pendamping Ahli</h3>
         <p>Bimbingan manasik dan teknis oleh tim profesional.</p>
       </div>
-      <div class="feature">
+      <div class="feature" data-aos="fade-up" data-aos-delay="400">
         <h3>Harga Amanah</h3>
         <p>Tanpa biaya tersembunyi. Transparansi adalah prioritas.</p>
       </div>
     </div>
   </section>
 
-  <section id="paket">
+  <section id="paket" data-aos="fade-up">
     <h2>Paket Perjalanan</h2>
     <div class="paket">
-      <div class="paket-item">
+      <div class="paket-item" data-aos="fade-up" data-aos-delay="100">
         <h3>Umroh Reguler</h3>
         <p>8–12 Hari | Hotel dekat Masjidil Haram & Nabawi</p>
         <a href="https://hidayatur.co.id/paket-perjalanan/umroh" target="_blank">Lihat Detail</a>
       </div>
-      <div class="paket-item">
-        <h3>Wisata Islami </h3>
+      <div class="paket-item" data-aos="fade-up" data-aos-delay="200">
+        <h3>Wisata Islami</h3>
         <p>Spiritual & wisata sejarah di Istanbul dan Cappadocia.</p>
         <a href="https://hidayatur.co.id/paket-perjalanan/umroh-plus-wisata" target="_blank">Lihat Detail</a>
       </div>
-      <div class="paket-item">
+      <div class="paket-item" data-aos="fade-up" data-aos-delay="300">
         <h3>Wisata Domestik</h3>
         <p>Perjalanan halal ke Lombok, Dieng, Jogja, hingga Eropa Muslim.</p>
         <a href="https://hidayatur.co.id/paket-perjalanan/wisata-domestik" target="_blank">Lihat Semua</a>
@@ -150,21 +211,20 @@
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Testimoni Jamaah</h2>
-    
-    <blockquote>
+    <blockquote data-aos="zoom-in">
       "Layanan Hidayatur sangat profesional. Saya merasa aman dan terbimbing sejak awal hingga akhir perjalanan."
       <br>– Ibu Nani, Bandung
     </blockquote>
     <div class="galeri-grid">
-      <img src="/galery/Hajj.jpg" alt="Masjidil Haram">
-      <img src="/galery/islami.jpg" alt="Cappadocia">
-      <img src="/galery/mekah.jpg" alt="Manasik">
+      <img src="https://hidayatur.co.id/assets/img/galeri/202307050317-hidayatur%208.png" alt="Masjidil Haram" data-aos="zoom-in" data-aos-delay="100">
+      <img src="https://hidayatur.co.id/assets/img/galeri/202307050318-hidayatur%2013.png" alt="Cappadocia" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://hidayatur.co.id/assets/img/galeri/202307050318-hidayatur%2012.png" alt="Manasik" data-aos="zoom-in" data-aos-delay="300">
     </div>
   </section>
 
-  <section>
+  <section data-aos="fade-up">
     <h2>Kontak & Konsultasi</h2>
     <p style="text-align: center;">Siap Berangkat? Hubungi tim kami untuk info lengkap & pendaftaran.</p>
     <ul style="list-style: none; text-align: center; padding: 0;">
@@ -174,7 +234,7 @@
     </ul>
   </section>
 
-  <footer>
+  <footer data-aos="fade-up">
     <p>&copy; 2025 Hidayatur Travel. A Journey for Iman.</p>
     <nav>
       <a href="https://hidayatur.co.id/" target="_blank">Tentang Kami</a> |
@@ -182,5 +242,13 @@
       <a href="https://hidayatur.co.id/contact-us" target="_blank">Kontak</a>
     </nav>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
 </body>
 </html>
